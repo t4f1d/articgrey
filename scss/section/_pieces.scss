@@ -1,0 +1,115 @@
+/*========== Pieces ========== */
+.pieces-one { background: linear-gradient(to right, #f0eeeb 0%, #eee8de 100%);} 
+.pieces-two { background-color: #EFEFEF;} 
+.pieces-three { background: linear-gradient(to bottom, #e3e8eb 0%, #f4f4f2 100%);} 
+
+
+#pieces {
+    margin-top: 0;
+    padding: 0;
+
+    .col-md-6,.col-md-12 {
+        padding: 0;
+    }
+
+    .bg-img {
+        width: 100%
+    }
+
+    .text-wrap {
+        position: absolute;
+        top: 50px;
+        padding: 40px;
+
+        .title {
+            font-family: serif;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+            font-size: 20px;
+            font-family: 'PT Serif', serif;
+        }
+
+        .sub {
+            color: $gray-light;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding-bottom: 6px;
+        }
+
+        &.big {
+            .title { font-size: 34px; padding-bottom: 20px;}
+            .sub { font-size: 14px;}
+
+        }
+
+        &.left {
+            left: 0;
+        }
+        &.right {
+            right: 0;
+        }
+
+        .btn-black {
+            border-radius: 0px;
+            padding:15px 30px;
+            font-size: 11px;
+            text-transform: uppercase;
+            @include button-variant($white,$gray,$gray)
+        }
+
+        .btn-transparent {
+            border-radius: 0px;
+            padding:10px 20px;
+            font-size: 11px;
+            text-transform: uppercase;
+            
+            color: $gray;
+            background-color: rgba(0,0,0,0);
+            border-color: $gray;
+            @include transition-all;
+
+            &:hover,
+            &:focus,
+            &.focus,
+            &:active,
+            &.active,
+            .open > .dropdown-toggle & {
+                color: $white;
+                background-color: darken(#D5A97F, 5%);
+                border-color: darken($white, 7%);
+            }
+            &:active,
+            &.active,
+            .open > .dropdown-toggle & {
+                background-image: none;
+            }
+            &.disabled,
+            &[disabled],
+            fieldset[disabled] & {
+                &,
+                &:hover,
+                &:focus,
+                &.focus,
+                &:active,
+                &.active {
+                    background-color: #D5A97F;
+                    border-color: $white;
+                }
+            }
+
+            .badge {
+                color: #D5A97F;
+                background-color: $gray;
+            }
+        }
+    }
+
+   @media (max-width: 992px) {
+        .big {
+            position: inherit;
+            margin-bottom: 40px;
+            .title { font-size: 30px; margin-top: 0}
+            .sub { font-size: 11px;}
+        }
+    }
+}

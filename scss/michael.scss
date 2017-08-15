@@ -1,0 +1,13 @@
+@import "variables";
+@import "mixins";
+
+// componenet
+@import "component/base";
+@import "component/navbar";
+@import "component/footer";
+
+// section
+@import "section/homepage";
+@import "section/pieces";
+@import "section/popular";
+@import "section/footer-menu";

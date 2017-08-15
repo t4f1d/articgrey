@@ -1,0 +1,96 @@
+// Mixins
+
+// font heading
+@mixin heading-font {
+	font-family: $font-primary;
+	font-weight: 300;
+}
+
+// font on body
+@mixin body-font {
+	font-family: $font-primary;
+}
+
+// alt-font
+@mixin alt-font {
+	font-family: $font-primary;
+}
+
+@mixin transition-all(){
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+@mixin background-cover(){
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@mixin radius($rad){
+	border-top-left-radius: $rad;
+	border-bottom-left-radius: $rad;
+	border-top-right-radius: $rad;
+	border-bottom-right-radius: $rad;
+}
+
+@mixin button-variant($color, $background, $border){
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+	@include transition-all;
+
+	&:hover,
+	&:focus,
+	&.focus,
+	&:active,
+	&.active,
+	.open > .dropdown-toggle & {
+		color: $color;
+		background-color: darken($background, 5%);
+	    border-color: darken($border, 7%);
+	}
+	&:active,
+	&.active,
+	.open > .dropdown-toggle & {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+@mixin btn-action($color){
+	border: 1px solid $color;
+    color: $color;
+    &:hover,
+    &:focus {
+        color: $white;
+        background-color: $color;
+    }
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}

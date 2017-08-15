@@ -1,0 +1,194 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    @include body-font;
+}
+
+a {
+    @include transition-all;
+    color: $theme-primary;
+    &:hover,
+    &:focus {
+        color: darken($theme-primary, 10%);
+    }
+}
+
+hr {
+    max-width: 100px;
+    margin: 25px auto 0;
+    border-width: 1px;
+    border-color: rgba($gray-darker, 10%/100.0%);
+}
+
+hr.light {
+    border-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include heading-font;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+// Homepage Header
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    overflow-y: hidden;
+    background: url("../img/bg-pattern.png"), $theme-secondary; /* fallback for old browsers */
+    background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, $theme-secondary , $theme-tertiary); /* Chrome 10-25, Safari 5.1-6 */
+    background: url("../img/bg-pattern.png"), linear-gradient(to left, $theme-secondary , $theme-tertiary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    .header-content {
+        text-align: center;
+        padding: 150px 0 50px;
+        position: relative;
+        .header-content-inner {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            h1 {
+                margin-top: 0;
+                margin-bottom: 30px;
+                font-size: 30px;
+            }
+            .list-badges {
+                margin-bottom: 25px;
+                img {
+                    height: 50px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+    .device-container {
+        max-width: 300px;
+        margin: 0 auto 100px;
+        .screen img {
+            border-radius: 3px;
+        }
+    }
+    @media (min-width: 768px) {
+        min-height: 100%;
+        .header-content {
+            text-align: left;
+            padding: 0;
+            height: 100vh;
+            .header-content-inner {
+                max-width: none;
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                h1 {
+                    font-size: 35px;
+                }
+            }
+        }
+        .device-container {
+            max-width: none;
+            max-height: calc(100vh - 100px);
+            margin: 100px auto 0;
+        }
+    }
+    @media (min-width: 992px) {
+        .header-content .header-content-inner h1 {
+            font-size: 50px;
+        }
+    }
+}
+
+// Sections
+
+section {
+    padding: 50px 0;
+    h2 {
+        font-size: 50px;
+    }
+}
+
+// Bootstrap Overrides
+
+.bg-primary {
+    background: $theme-primary;
+    background: -webkit-linear-gradient($theme-primary , darken($theme-primary, 5%));
+    background: linear-gradient($theme-primary , darken($theme-primary, 5%));
+}
+
+.text-primary {
+    color: $theme-primary;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+// Button Styles
+.btn-outline {
+    color: white;
+    border-color: white;
+    border: 1px solid;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: white;
+        background-color: $theme-primary;
+        border-color: $theme-primary;
+    }
+}
+
+.btn {
+    @include alt-font;
+    border-radius: 300px;
+}
+
+.btn-xl {
+    padding: 15px 45px;
+    font-size: 11px;
+}
+
+// Extras
+// -- Highlight Color Customization
+::-moz-selection {
+    color: white;
+    text-shadow: none;
+    background: $gray-darker;
+}
+
+::selection {
+    color: white;
+    text-shadow: none;
+    background: $gray-darker;
+}
+
+img::selection {
+    color: white;
+    background: transparent;
+}
+
+img::-moz-selection {
+    color: white;
+    background: transparent;
+}
+
+body {
+    webkit-tap-highlight-color: $gray-darker;
+}

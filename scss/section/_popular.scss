@@ -1,0 +1,59 @@
+/*========== Popular ========== */
+ 
+#popular {
+    .title {
+        text-align: center;
+        .sub{
+            font-size: 12px;
+            color: $gray-light;
+        }
+        .big {
+            font-family: 'PT Serif', serif;
+            font-size: 30px;
+        }
+    }
+
+    .col-md-3 {
+        height: 450px;
+    }
+
+    .image {
+        padding: 20px;
+        img {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    }
+
+    .name {
+        text-align: center;
+        
+        a {
+            font-family: 'PT Serif', serif;
+            &:hover,
+            &:focus {
+                color: $theme-primary;
+                text-decoration: none;
+            }
+        }
+
+        .name-product {
+            color: $gray;
+            font-size: 18px;
+        }
+        .category-product {
+            font-size: 16px;
+            color: $gray-light;
+        }
+
+    }
+
+    .price {
+        padding-top: 20px;
+        text-align: center;
+        font-family: 'PT Serif', serif;
+        color: $theme-primary;
+
+    }
+}
